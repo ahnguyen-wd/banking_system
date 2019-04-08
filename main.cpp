@@ -33,6 +33,7 @@ int main(int argc, const char * argv[]) {
         cout << "4. AUDITOR MENU" << endl;
         cout << "5. ACCOUNTANT MENU" << endl;
         cout << "6. QUIT" << endl;
+        cout << "Option: ";
         cin >> ch;
         
         if(ch > 0 && ch < 6) {
@@ -68,25 +69,80 @@ int main(int argc, const char * argv[]) {
 
 void tellerMenu() {
     Teller teller;
-    cout << "This is the teller menu";
+    int ch = 0;
+    
+    cout << "\n==========================================================" << endl;
+    cout << "Welcome to the Teller menu. Please select an option below:" << endl;
+    cout << "1. Open Account" << endl;
+    cout << "2. Close Account" << endl;
+    cout << "3. Check Account Information" << endl;
+    cout << "Option: ";
+    cin >> ch;
+    cout << "==========================================================\n" << endl;
+    
 }
 
 void managerMenu() {
     Manager manager;
-    cout << "This is the manager menu";
+    int ch = 0;
+    
+    cout << "\n==========================================================" << endl;
+    cout << "Welcome to the Manager menu. Please select an option below:" << endl;
+    cout << "1. Check Quota" << endl;
+    cout << "2. Open Customer Account" << endl;
+    cout << "3. Close Customer Account" << endl;
+    cout << "4. Check Customer Account Information" << endl;
+    cout << "5. Create Employee Account" << endl;
+    cout << "6. Close Emeployee Account" << endl;
+    cout << "Option: ";
+    cin >> ch;
+    cout << "==========================================================\n" << endl;
+    
 }
 
 void systemAdminMenu() {
     SystemAdmin sysad;
-    cout << "This is the sysad menu";
+    int ch = 0;
+    
+    cout << "\n==========================================================" << endl;
+    cout << "Welcome to the System Admin menu. Please select an option below:" << endl;
+    cout << "1. Schedule Security Fix" << endl;
+    cout << "2. Schedule Backup" << endl;
+    cout << "3. Run Patches" << endl;
+    cout << "4. Generate Logs" << endl;
+    cout << "5. Enable Maintenance Mode" << endl;
+    cout << "Option: ";
+    cin >> ch;
+    cout << "==========================================================\n" << endl;
+    
 }
 
 void auditorMenu() {
     Auditor auditor;
-    cout << "This is the auditor menu";
+    int ch = 0;
+    
+    cout << "\n==========================================================" << endl;
+    cout << "Welcome to the Auditor menu. Please select an option below:" << endl;
+    cout << "1. Export Customer Data" << endl;
+    cout << "2. Check Account Information (High Level)" << endl;
+    cout << "3. Run Audit Check" << endl;
+    cout << "Option: ";
+    cin >> ch;
+    cout << "==========================================================\n" << endl;
+    
 }
 
 void accountantMenu() {
     Accountant accountant;
-    cout << "This is the accountant menu";
+    int ch = 0;
+    
+    cout << "\n==========================================================" << endl;
+    cout << "Welcome to the Accountan t menu. Please select an option below:" << endl;
+    cout << "1. Check Account Information" << endl;
+    cout << "2. Run Discrepencies Check" << endl;
+    cout << "3. Edit Customer Fees" << endl;
+    cout << "Option: ";
+    cin >> ch;
+    cout << "==========================================================\n" << endl;
+    
 }

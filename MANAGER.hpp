@@ -10,8 +10,9 @@
 #define Manager_hpp
 
 #include <stdio.h>
+#include "Teller.hpp"
 
-class Manager
+class Manager : public Teller
 {
     
 };

@@ -76,10 +76,28 @@ void tellerMenu() {
     cout << "1. Open Account" << endl;
     cout << "2. Close Account" << endl;
     cout << "3. Check Account Information" << endl;
+    cout << "4. Return to Main Menu" << endl;
     cout << "Option: ";
     cin >> ch;
     cout << "==========================================================\n" << endl;
     
+    if(ch > 0 && ch < 4) {
+        switch(ch) {
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+        }
+    }
+    else if(ch == 4) {
+        cout << "\nReturning to Main Menu...." << endl;
+    }
+    else {
+        cout << "\nYou have entered an invalid option, please try again." << endl;
+        cout << "--------------------------------\n" << endl;
+    }
 }
 
 void managerMenu() {
@@ -94,10 +112,34 @@ void managerMenu() {
     cout << "4. Check Customer Account Information" << endl;
     cout << "5. Create Employee Account" << endl;
     cout << "6. Close Emeployee Account" << endl;
+    cout << "7. Return to Main Menu" << endl;
     cout << "Option: ";
     cin >> ch;
     cout << "==========================================================\n" << endl;
     
+    if(ch > 0 && ch < 7) {
+        switch(ch) {
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+        }
+    }
+    else if(ch == 7) {
+        cout << "\nReturning to Main Menu...." << endl;
+    }
+    else {
+        cout << "\nYou have entered an invalid option, please try again." << endl;
+        cout << "--------------------------------\n" << endl;
+    }
 }
 
 void systemAdminMenu() {
@@ -111,10 +153,32 @@ void systemAdminMenu() {
     cout << "3. Run Patches" << endl;
     cout << "4. Generate Logs" << endl;
     cout << "5. Enable Maintenance Mode" << endl;
+    cout << "6. Return to Main Menu" << endl;
     cout << "Option: ";
     cin >> ch;
     cout << "==========================================================\n" << endl;
     
+    if(ch > 0 && ch < 6) {
+        switch(ch) {
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+        }
+    }
+    else if(ch == 6) {
+         cout << "\nReturning to Main Menu...." << endl;
+    }
+    else {
+        cout << "\nYou have entered an invalid option, please try again." << endl;
+        cout << "--------------------------------\n" << endl;
+    }
 }
 
 void auditorMenu() {
@@ -126,10 +190,28 @@ void auditorMenu() {
     cout << "1. Export Customer Data" << endl;
     cout << "2. Check Account Information (High Level)" << endl;
     cout << "3. Run Audit Check" << endl;
+    cout << "4. Return to Main Menu" << endl;
     cout << "Option: ";
     cin >> ch;
     cout << "==========================================================\n" << endl;
     
+    if(ch > 0 && ch < 4) {
+        switch(ch) {
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+        }
+    }
+    else if(ch == 4) {
+        cout << "\nReturning to Main Menu...." << endl;
+    }
+    else {
+        cout << "\nYou have entered an invalid option, please try again." << endl;
+        cout << "--------------------------------\n" << endl;
+    }
 }
 
 void accountantMenu() {
@@ -141,8 +223,26 @@ void accountantMenu() {
     cout << "1. Check Account Information" << endl;
     cout << "2. Run Discrepencies Check" << endl;
     cout << "3. Edit Customer Fees" << endl;
+    cout << "4. Return to Main Menu" << endl;
     cout << "Option: ";
     cin >> ch;
     cout << "==========================================================\n" << endl;
     
+    if(ch > 0 && ch < 4) {
+        switch(ch) {
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+        }
+    }
+    else if(ch == 4) {
+         cout << "\nReturning to Main Menu...." << endl;
+    }
+    else {
+        cout << "\nYou have entered an invalid option, please try again." << endl;
+        cout << "--------------------------------\n" << endl;
+    }
 }

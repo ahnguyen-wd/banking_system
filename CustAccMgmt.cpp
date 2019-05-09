@@ -69,3 +69,26 @@ void CustAccMgmt::get_information(string ID) {
 }
 
 
+void CustAccMgmt::deposit(string ID) {
+	customer = accessor.returnCustomer(ID);
+	double depositfund = 0;
+
+	cout << "Enter amount";
+	cin >> depositfund;
+
+	customer.funds += depositfund;
+
+	accessor.writeCustomer(ID, customer.name, customer.address, customer.birthday, customer.SSN, customer.funds);
+}
+void CustAccMgmt::withdraw(string ID) {
+	custoner = accessor.returnCustomer(ID);
+	double wfund = 0;
+
+	cout << "Enter amount";
+	cin >> wfund;
+
+	customer.funds -= wfund;
+
+	accessor.writeCustomer(ID, customer.name, customer.address, customer.birthday, customer.SSN, customer.funds);
+}
+

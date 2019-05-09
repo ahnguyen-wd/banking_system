@@ -13,7 +13,9 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include "Teller.hpp"
 #include "Customer.hpp"
+
 
 using namespace std;
 
@@ -27,6 +29,8 @@ public:
 	void writeEmployee(int, string, int, string, int, int, string);
 	bool isEmployeeInfoDuplicated(string);
     bool checkID(string);
+	Teller returnTeller(string);
+	void updateQuota(string, int);
     //return customer that we will use to remove from file
     Customer returnCustomer(string);
 private:

@@ -128,12 +128,13 @@ void managerMenu() {
 			cout << "\n==========================================================" << endl;
 			cout << "Welcome to the Manager menu. Please select an option below:" << endl;
 			cout << "1. Check Quota" << endl;
-			cout << "2. Open Customer Account" << endl;
-			cout << "3. Close Customer Account" << endl;
-			cout << "4. Check Customer Account Information" << endl;
-			cout << "5. Create Employee Account" << endl;
-			cout << "6. Close Emeployee Account" << endl;
-			cout << "7. Return to Main Menu" << endl;
+			cout << "2. Set Quota" << endl;
+			cout << "3. Open Customer Account" << endl;
+			cout << "4. Close Customer Account" << endl;
+			cout << "5. Check Customer Account Information" << endl;
+			cout << "6. Create Employee Account" << endl;
+			cout << "7. Close Emeployee Account" << endl;
+			cout << "8. Return to Main Menu" << endl;
 			cout << "Option: ";
 			cin >> ch;
 			cout << "==========================================================\n" << endl;
@@ -145,15 +146,18 @@ void managerMenu() {
 				case 1:
 					break;
 				case 2:
+					manager.setQuota();
 					break;
 				case 3:
 					break;
 				case 4:
 					break;
 				case 5:
-					manager.addEmployee();
 					break;
 				case 6:
+					manager.addEmployee();
+					break;
+				case 7:
 					break;
 				}
 			}

@@ -13,12 +13,11 @@ using namespace std;
 
 void tellerMenu();
 void managerMenu();
-void systemAdminMenu();
-void auditorMenu();
-void accountantMenu();
+//void systemAdminMenu();
+//void auditorMenu();
+//void accountantMenu();
 
 int main(int argc, const char* argv[]) {
-	// insert code here...
 
 	int ch = 0;
 	int accessCode = 0;
@@ -113,7 +112,6 @@ void tellerMenu() {
 	}
 }
 
-
 void managerMenu() {
 	Manager manager;
 	int ch = 0, managerAccessCode;
@@ -123,7 +121,7 @@ void managerMenu() {
 
 	if (managerAccessCode == manager.managerAccessCode)
 	{
-		while (ch != 7)
+		while (ch != 8)
 		{
 			cout << "\n==========================================================" << endl;
 			cout << "Welcome to the Manager menu. Please select an option below:" << endl;
@@ -139,7 +137,7 @@ void managerMenu() {
 			cin >> ch;
 			cout << "==========================================================\n" << endl;
 
-			if (ch > 0 && ch < 7)
+			if (ch > 0 && ch < 8)
 			{
 				switch (ch)
 				{
@@ -162,7 +160,7 @@ void managerMenu() {
 					break;
 				}
 			}
-			else if (ch == 7)
+			else if (ch == 8)
 			{
 				cout << "\nReturning to Main Menu...." << endl;
 			}

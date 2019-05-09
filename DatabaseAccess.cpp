@@ -121,6 +121,18 @@ void DatabaseAccess::writeEmployee(int ID, string name, int SSN, string address,
 	employeeFile.close();
 }
 
+bool DatabaseAccess::isEmployeeInfoDuplicated(string info)
+{
+	ifstream in("employees.txt");
+	string str;
+	while (getline(in, str))
+	{
+		if (str.find(info) != string::npos)
+			return true;
+	}
+	return false;
+}
+
 bool DatabaseAccess::checkID(string ID) {
 	//Simple check to see if ID is correct length
 	if (ID.length() > 5) {

@@ -144,6 +144,7 @@ void managerMenu() {
 				switch (ch)
 				{
 				case 1:
+					manager.getQuota();
 					break;
 				case 2:
 					manager.setQuota();

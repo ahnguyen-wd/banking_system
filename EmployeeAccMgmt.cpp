@@ -44,7 +44,16 @@ void EmployeeAccMgmt::setQuota()
 	cin.ignore();
 	cout << "Enter Quota amount: ";
 	cin >> quota;
-	Teller teller = access.returnTeller(ID);
-	teller.quota = quota;
-	access.updateQuota(ID, teller.quota);
+	access.updateQuota(ID, quota);
+}
+
+void EmployeeAccMgmt::getQuota()
+{
+	string ID;
+	int quota;
+	cout << "Enter Employee ID: ";
+	cin >> ID;
+	cin.ignore();
+	quota = access.getQuota(ID);
+	cout << "Quota: " << quota << endl;
 }

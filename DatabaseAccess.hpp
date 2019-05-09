@@ -5,7 +5,6 @@
 //  Created by Andrew Nguyen on 5/6/19.
 //  Copyright © 2019 CSUF-CPSC462. All rights reserved.
 //
-
 #ifndef DatabaseAccess_hpp
 #define DatabaseAccess_hpp
 
@@ -13,7 +12,6 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include "Teller.hpp"
 #include "Customer.hpp"
 
 
@@ -29,8 +27,8 @@ public:
 	void writeEmployee(int, string, int, string, int, int, string);
 	bool isEmployeeInfoDuplicated(string);
     bool checkID(string);
-	Teller returnTeller(string);
 	void updateQuota(string, int);
+	int getQuota(string);
     //return customer that we will use to remove from file
     Customer returnCustomer(string);
 private:

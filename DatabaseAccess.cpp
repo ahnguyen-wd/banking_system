@@ -107,74 +107,50 @@ Customer DatabaseAccess::returnCustomer(string ID) {
 	return customer;
 }
 
-Teller DatabaseAccess::returnTeller(string ID) {
-	Teller employee;
-
-	ifstream in("employees.txt");
-	int employeeDataCnt = 6;
-	bool found = false;
-	lineCounter = 0;
-
-	while (getline(in, line)) {
-		lineCounter++;
-		if (line.find(ID) != string::npos) {
-			found = true;
-		}
-		if (found == true && employeeDataCnt != 0) {
-			employeeDataCnt--;
-			if (employeeDataCnt == 7) {
-				cout << line << endl;
-				employee.employeeID = stoi(line);
-			}
-			else if (employeeDataCnt == 6) {
-				employee.name = line;
-			}
-			else if (employeeDataCnt == 5) {
-				employee.SSN = stoi(line);
-			}
-			else if (employeeDataCnt == 4) {
-				employee.address = line;
-			}
-			else if (employeeDataCnt == 3) {
-				employee.salary = stoi(line);
-			}
-			else if (employeeDataCnt == 2) {
-				employee.birthday = stoi(line);
-			}
-			else if (employeeDataCnt == 1) {
-				employee.managersName = line;
-			}
-			else if (employeeDataCnt == 0) {
-				employee.quota = stoi(line);
-			}
-		}
-	}
-
-	return employee;
-}
-
-void DatabaseAccess::updateQuota(string ID, int quota)
+int DatabaseAccess::getQuota(string ID)
 {
-	ifstream employeeFile;
-	ofstream newFile;
+	ifstream employeeFile("employees.txt");
 	string line;
-	bool found;
-	employeeFile.open("employees.txt", ios::app);
-	newFile.open("newEmployees.txt", ios::app);
 	while (employeeFile >> line)
 	{
 		if (line == ID)
 		{
-			for (int i = 0; i < 7; i++)
-			{
-				line += "\n";
-				newFile << line;
+			for (int i = 0; i < 7; i++) {
+				employeeFile >> line;
 			}
-			newFile << "\n" << quota;
-		}
+			return stoi(line);
+		}	
 	}
-	remove("employees.txt");
-	rename("newEmployees.txt", "employees.txt");
+}
+
+void DatabaseAccess::updateQuota(string ID, int quota)
+{
+	ifstream employeeFile("employees.txt");
+	ofstream newFile("temp.txt");
+	string line;
+	while (employeeFile >> line)
+	{
+		if (line == ID)
+		{
+			newFile << line << '\n';
+			for (int i = 0; i < 6; i++)
+			{
+				employeeFile >> line;
+				newFile << line << '\n';
+			}
+			newFile << quota << '\n';
+		}
+		else
+			newFile << line << '\n';
+	}
+	employeeFile.close();
+	newFile.close();
+	ifstream x("temp.txt");
+	ofstream y("employees.txt");
+	while (x >> line)
+	{
+		y << line << '\n';
+	}
 
 }
 

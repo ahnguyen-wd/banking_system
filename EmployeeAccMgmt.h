@@ -11,7 +11,8 @@ class EmployeeAccMgmt
 {
 public:
 	void addEmployee();
-	void EmployeeAccMgmt::setQuota();
+	void setQuota();
+	void getQuota();
 private:
 	DatabaseAccess access;
 	Employee empl;

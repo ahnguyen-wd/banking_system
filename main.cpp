@@ -6,6 +6,7 @@
 //
 
 #include "Teller.hpp"
+#include "MANAGER.hpp"
 #include <iostream>
 
 using namespace std;
@@ -25,10 +26,10 @@ int main(int argc, const char * argv[]) {
     while(ch != 6) {
         cout << "MAIN MENU" << endl;
         cout << "1. TELLER MENU" << endl;
-//        cout << "2. MANAGER MENU" << endl;
-//        cout << "3. SYSTEM ADMIN MENU" << endl;
-//        cout << "4. AUDITOR MENU" << endl;
-//        cout << "5. ACCOUNTANT MENU" << endl;
+		cout << "2. MANAGER MENU" << endl;
+		cout << "3. SYSTEM ADMIN MENU" << endl;
+		cout << "4. AUDITOR MENU" << endl;
+		cout << "5. ACCOUNTANT MENU" << endl;
         cout << "6. QUIT" << endl;
         cout << "Option: ";
         cin >> ch;
@@ -38,18 +39,15 @@ int main(int argc, const char * argv[]) {
                 case 1:
                     tellerMenu();
                     break;
-//                                    case 2:
-//                                        managerMenu();
-//                                        break;
-//                                    case 3:
-//                                        systemAdminMenu();
-//                                        break;
-//                                    case 4:
-//                                        auditorMenu();
-//                                        break;
-//                                    case 5:
-//                                        accountantMenu();
-//                                        break;
+				case 2:
+					managerMenu();
+					break;
+				case 3:
+				case 4:
+				case 5:
+				case 6:
+					cout << "Functionality not yet implemented" << endl;
+					break;
             }
         }
         else if(ch == 6) {
@@ -115,48 +113,49 @@ void tellerMenu() {
     }
 }
 
-//
-//void managerMenu() {
-//    Manager manager;
-//    int ch = 0;
-//
-//    cout << "\n==========================================================" << endl;
-//    cout << "Welcome to the Manager menu. Please select an option below:" << endl;
-//    cout << "1. Check Quota" << endl;
-//    cout << "2. Open Customer Account" << endl;
-//    cout << "3. Close Customer Account" << endl;
-//    cout << "4. Check Customer Account Information" << endl;
-//    cout << "5. Create Employee Account" << endl;
-//    cout << "6. Close Emeployee Account" << endl;
-//    cout << "7. Return to Main Menu" << endl;
-//    cout << "Option: ";
-//    cin >> ch;
-//    cout << "==========================================================\n" << endl;
-//
-//    if(ch > 0 && ch < 7) {
-//        switch(ch) {
-//            case 1:
-//                break;
-//            case 2:
-//                break;
-//            case 3:
-//                break;
-//            case 4:
-//                break;
-//            case 5:
-//                break;
-//            case 6:
-//                break;
-//        }
-//    }
-//    else if(ch == 7) {
-//        cout << "\nReturning to Main Menu...." << endl;
-//    }
-//    else {
-//        cout << "\nYou have entered an invalid option, please try again." << endl;
-//        cout << "--------------------------------\n" << endl;
-//    }
-//}
+
+void managerMenu() {
+    Manager manager;
+    int ch = 0;
+
+    cout << "\n==========================================================" << endl;
+    cout << "Welcome to the Manager menu. Please select an option below:" << endl;
+    cout << "1. Check Quota" << endl;
+    cout << "2. Open Customer Account" << endl;
+    cout << "3. Close Customer Account" << endl;
+    cout << "4. Check Customer Account Information" << endl;
+    cout << "5. Create Employee Account" << endl;
+    cout << "6. Close Emeployee Account" << endl;
+    cout << "7. Return to Main Menu" << endl;
+    cout << "Option: ";
+    cin >> ch;
+    cout << "==========================================================\n" << endl;
+
+    if(ch > 0 && ch < 7) {
+        switch(ch) {
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+				manager.addEmployee();
+                break;
+            case 6:
+                break;
+        }
+    }
+    else if(ch == 7) {
+        cout << "\nReturning to Main Menu...." << endl;
+    }
+    else {
+        cout << "\nYou have entered an invalid option, please try again." << endl;
+        cout << "--------------------------------\n" << endl;
+    }
+}
 
 //void systemAdminMenu() {
 //    SystemAdmin sysad;

@@ -107,6 +107,20 @@ Customer DatabaseAccess::returnCustomer(string ID) {
     return customer;
 }
 
+void DatabaseAccess::writeEmployee(int ID, string name, int SSN, string address, int salary, int birthday, string managerName)
+{
+	ofstream employeeFile;
+	employeeFile.open("employees.txt", ios::app);
+	employeeFile << ID << endl;
+	employeeFile << name << endl;
+	employeeFile << SSN << endl;
+	employeeFile << address << endl;
+	employeeFile << salary << endl;
+	employeeFile << birthday << endl;
+	employeeFile << managerName << endl;
+	employeeFile.close();
+}
+
 bool DatabaseAccess::checkID(string ID) {
     //Simple check to see if ID is correct length
     if(ID.length() > 5) {

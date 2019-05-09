@@ -24,6 +24,7 @@ public:
     ~DatabaseAccess();
     void writeCustomer(string, string, string, int, string, int);
     void removeCustomer(string);
+	void writeEmployee(int, string, int, string, int, int, string);
     bool checkID(string);
     //return customer that we will use to remove from file
     Customer returnCustomer(string);

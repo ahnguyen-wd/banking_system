@@ -17,144 +17,161 @@ void systemAdminMenu();
 void auditorMenu();
 void accountantMenu();
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    
-    int ch = 0;
-    int accessCode = 0;
-    
-    while(ch != 6) {
-        cout << "MAIN MENU" << endl;
-        cout << "1. TELLER MENU" << endl;
+int main(int argc, const char* argv[]) {
+	// insert code here...
+
+	int ch = 0;
+	int accessCode = 0;
+
+	while (ch != 6) {
+		cout << "MAIN MENU" << endl;
+		cout << "1. TELLER MENU" << endl;
 		cout << "2. MANAGER MENU" << endl;
 		cout << "3. SYSTEM ADMIN MENU" << endl;
 		cout << "4. AUDITOR MENU" << endl;
 		cout << "5. ACCOUNTANT MENU" << endl;
-        cout << "6. QUIT" << endl;
-        cout << "Option: ";
-        cin >> ch;
-        
-        if(ch > 0 && ch < 6) {
-            switch(ch) {
-                case 1:
-                    tellerMenu();
-                    break;
-				case 2:
-					managerMenu();
-					break;
-				case 3:
-				case 4:
-				case 5:
-				case 6:
-					cout << "Functionality not yet implemented" << endl;
-					break;
-            }
-        }
-        else if(ch == 6) {
-            cout << "\nExiting Banking System...." << endl;
-        }
-        else {
-            cout << "\nYou have entered an invalid option, please try again." << endl;
-            cout << "--------------------------------\n" << endl;
-        }
-    }
-    
-    return 0;
+		cout << "6. QUIT" << endl;
+		cout << "Option: ";
+		cin >> ch;
+
+		if (ch > 0 && ch < 6) {
+			switch (ch) {
+			case 1:
+				tellerMenu();
+				break;
+			case 2:
+				managerMenu();
+				break;
+			case 3:
+			case 4:
+			case 5:
+			case 6:
+				cout << "Functionality not yet implemented" << endl;
+				break;
+			}
+		}
+		else if (ch == 6) {
+			cout << "\nExiting Banking System...." << endl;
+		}
+		else {
+			cout << "\nYou have entered an invalid option, please try again." << endl;
+			cout << "--------------------------------\n" << endl;
+		}
+	}
+
+	return 0;
 }
 
 void tellerMenu() {
-    Teller teller;
-    int ch = 0;
-    int accessCode = 0;
-    
-    cout << "Please enter your access code: ";
-    cin >> accessCode;
-    string ID;
-    
-    if(accessCode == teller.accessCode) {
-        while(ch != 4) {
-            cout << "\n=============================================" << endl;
-            cout << "Welcome to the Teller menu. Please select an option below:" << endl;
-            cout << "1. Open Account" << endl;
-            cout << "2. Close Account" << endl;
-            cout << "3. Check Account Information" << endl;
-            cout << "4. Return to Main Menu" << endl;
-            cout << "Option: ";
-            cin >> ch;
-            cout << "=============================================\n" << endl;
-            
-            if(ch > 0 && ch < 4) {
-                switch(ch) {
-                    case 1:
-                        teller.createCustomer();
-                        break;
-                    case 2:
-                        cout << "Please enter ID of user you want to remove: ";
-                        cin >> ID;
-                        teller.removeCustomer(ID);
-                        break;
-                    case 3:
-                        cout << "Please enter ID of user you want to remove: ";
-                        cin >> ID;
-                        teller.get_information(ID);
-                }
-            }
-            else if(ch == 4) {
-                cout << "\nReturning to Main Menu...." << endl;
-            }
-            else {
-                cout << "\nYou have entered an invalid option, please try again." << endl;
-                cout << "--------------------------------\n" << endl;
-            }
-        }
-    }
-    else {
-        cout << "\nYou entered the incorrect access code. Please try again.\n" << endl;
-    }
+	Teller teller;
+	int ch = 0;
+	int accessCode = 0;
+
+	cout << "Please enter your access code: ";
+	cin >> accessCode;
+	string ID;
+
+	if (accessCode == teller.accessCode) {
+		while (ch != 4) {
+			cout << "\n=============================================" << endl;
+			cout << "Welcome to the Teller menu. Please select an option below:" << endl;
+			cout << "1. Open Account" << endl;
+			cout << "2. Close Account" << endl;
+			cout << "3. Check Account Information" << endl;
+			cout << "4. Return to Main Menu" << endl;
+			cout << "Option: ";
+			cin >> ch;
+			cout << "=============================================\n" << endl;
+
+			if (ch > 0 && ch < 4) {
+				switch (ch) {
+				case 1:
+					teller.createCustomer();
+					break;
+				case 2:
+					cout << "Please enter ID of user you want to remove: ";
+					cin >> ID;
+					teller.removeCustomer(ID);
+					break;
+				case 3:
+					cout << "Please enter ID of user you want to remove: ";
+					cin >> ID;
+					teller.get_information(ID);
+				}
+			}
+			else if (ch == 4) {
+				cout << "\nReturning to Main Menu...." << endl;
+			}
+			else {
+				cout << "\nYou have entered an invalid option, please try again." << endl;
+				cout << "--------------------------------\n" << endl;
+			}
+		}
+	}
+	else {
+		cout << "\nYou entered the incorrect access code. Please try again.\n" << endl;
+	}
 }
 
 
 void managerMenu() {
-    Manager manager;
-    int ch = 0;
+	Manager manager;
+	int ch = 0, managerAccessCode;
 
-    cout << "\n==========================================================" << endl;
-    cout << "Welcome to the Manager menu. Please select an option below:" << endl;
-    cout << "1. Check Quota" << endl;
-    cout << "2. Open Customer Account" << endl;
-    cout << "3. Close Customer Account" << endl;
-    cout << "4. Check Customer Account Information" << endl;
-    cout << "5. Create Employee Account" << endl;
-    cout << "6. Close Emeployee Account" << endl;
-    cout << "7. Return to Main Menu" << endl;
-    cout << "Option: ";
-    cin >> ch;
-    cout << "==========================================================\n" << endl;
+	cout << "Please enter your access code: ";
+	cin >> managerAccessCode;
 
-    if(ch > 0 && ch < 7) {
-        switch(ch) {
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-            case 4:
-                break;
-            case 5:
-				manager.addEmployee();
-                break;
-            case 6:
-                break;
-        }
-    }
-    else if(ch == 7) {
-        cout << "\nReturning to Main Menu...." << endl;
-    }
-    else {
-        cout << "\nYou have entered an invalid option, please try again." << endl;
-        cout << "--------------------------------\n" << endl;
-    }
+	if (managerAccessCode == manager.managerAccessCode)
+	{
+		while (ch != 7)
+		{
+			cout << "\n==========================================================" << endl;
+			cout << "Welcome to the Manager menu. Please select an option below:" << endl;
+			cout << "1. Check Quota" << endl;
+			cout << "2. Open Customer Account" << endl;
+			cout << "3. Close Customer Account" << endl;
+			cout << "4. Check Customer Account Information" << endl;
+			cout << "5. Create Employee Account" << endl;
+			cout << "6. Close Emeployee Account" << endl;
+			cout << "7. Return to Main Menu" << endl;
+			cout << "Option: ";
+			cin >> ch;
+			cout << "==========================================================\n" << endl;
+
+			if (ch > 0 && ch < 7)
+			{
+				switch (ch)
+				{
+				case 1:
+					break;
+				case 2:
+					break;
+				case 3:
+					break;
+				case 4:
+					break;
+				case 5:
+					manager.addEmployee();
+					break;
+				case 6:
+					break;
+				}
+			}
+			else if (ch == 7)
+			{
+				cout << "\nReturning to Main Menu...." << endl;
+			}
+			else
+			{
+				cout << "\nYou have entered an invalid option, please try again." << endl;
+				cout << "--------------------------------\n" << endl;
+			}
+		}
+	}
+	else
+	{
+		cout << "\nYou entered the incorrect access code. Please try again.\n" << endl;
+	}
 }
 
 //void systemAdminMenu() {

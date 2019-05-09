@@ -22,6 +22,7 @@ void EmployeeAccMgmt::addEmployee()
 	cout << "Enter employee's manager's name: ";
 	cin.ignore();
 	getline(cin, newEmployee.managersName);
-	access.writeEmployee(newEmployee.employeeID, newEmployee.name, newEmployee.SSN, newEmployee.address, newEmployee.salary, newEmployee.birthday, newEmployee.managersName);
+	access.writeEmployee(newEmployee.employeeID, newEmployee.name, newEmployee.SSN, newEmployee.address, 
+		newEmployee.salary, newEmployee.birthday, newEmployee.managersName);
 
 }

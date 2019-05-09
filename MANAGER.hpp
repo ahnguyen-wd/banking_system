@@ -12,7 +12,7 @@ class Manager : public Employee, public EmployeeAccMgmt
 public:
 	Manager();
 	~Manager();
-	int accessCode;
+	int managerAccessCode;
 };
 
 #endif // !manager

@@ -38,13 +38,21 @@ void EmployeeAccMgmt::addEmployee()
 void EmployeeAccMgmt::setQuota()
 {
 	string ID;
-	int quota;
+	int quota = -1;
 	cout << "Enter Employee ID: ";
 	cin >> ID;
 	cin.ignore();
-	cout << "Enter Quota amount: ";
-	cin >> quota;
-	access.updateQuota(ID, quota);
+	while (quota <= 0) {
+		cout << "Enter Quota amount: ";
+		cin >> quota;
+		if (quota >= 0)
+		{
+			access.updateQuota(ID, quota);
+		}
+		else {
+			cout << "Invalid Quota, must be greater than or equal to 0" << endl;
+		}
+	}
 }
 
 void EmployeeAccMgmt::getQuota()

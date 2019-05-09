@@ -22,7 +22,8 @@ public:
     void createCustomer();
     void removeCustomer(string);
     void get_information(string);
-    void deposit();
+    void deposit(string);
+    void withdraw(string);
 private:
     DatabaseAccess accessor;
     Customer customer;

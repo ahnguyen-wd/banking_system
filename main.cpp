@@ -8,6 +8,7 @@
 #include "Teller.hpp"
 #include "MANAGER.hpp"
 #include <iostream>
+#include<string>
 
 using namespace std;
 
@@ -91,22 +92,26 @@ void tellerMenu() {
 					break;
 				case 2:
 					cout << "Please enter ID of user you want to remove: ";
-					cin >> ID;
+					cin.ignore();
+					getline(cin, ID);
 					teller.removeCustomer(ID);
 					break;
 				case 3:
 					cout << "Please enter ID of user you want to remove: ";
-					cin >> ID;
+					cin.ignore();
+					getline(cin, ID);
 					teller.get_information(ID);
 				case 4:
 					cout << "Please enter ID of user you want to deposit: ";
-					cin >> ID;
-					teller.deposit();
+					cin.ignore();
+					getline(cin, ID);
+					teller.deposit(ID);
 					break;
 				case 5:
 					cout << "Please enter ID of user you want to withdraw: ";
-					cin >> ID;
-					teller.withdraw();
+					cin.ignore();
+					getline(cin, ID);
+					teller.withdraw(ID);
 					break;
 				}
 			}

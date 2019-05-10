@@ -81,7 +81,7 @@ void CustAccMgmt::deposit(string ID) {
 	accessor.writeCustomer(ID, customer.name, customer.address, customer.birthday, customer.SSN, customer.funds);
 }
 void CustAccMgmt::withdraw(string ID) {
-	custoner = accessor.returnCustomer(ID);
+	customer = accessor.returnCustomer(ID);
 	double wfund = 0;
 
 	cout << "Enter amount";

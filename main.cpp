@@ -77,12 +77,14 @@ void tellerMenu() {
 			cout << "1. Open Account" << endl;
 			cout << "2. Close Account" << endl;
 			cout << "3. Check Account Information" << endl;
-			cout << "4. Return to Main Menu" << endl;
+			cout << "4. Deposit" << endl;
+			cout << "5. Withdraw" << endl;
+			cout << "6. Return to Main Menu" << endl;
 			cout << "Option: ";
 			cin >> ch;
 			cout << "=============================================\n" << endl;
 
-			if (ch > 0 && ch < 4) {
+			if (ch > 0 && ch < 6) {
 				switch (ch) {
 				case 1:
 					teller.createCustomer();
@@ -96,9 +98,19 @@ void tellerMenu() {
 					cout << "Please enter ID of user you want to remove: ";
 					cin >> ID;
 					teller.get_information(ID);
+				case 4:
+					cout << "Please enter ID of user you want to deposit: ";
+					cin >> ID;
+					teller.deposit();
+					break;
+				case 5:
+					cout << "Please enter ID of user you want to withdraw: ";
+					cin >> ID;
+					teller.withdraw();
+					break;
 				}
 			}
-			else if (ch == 4) {
+			else if (ch == 6) {
 				cout << "\nReturning to Main Menu...." << endl;
 			}
 			else {
@@ -111,7 +123,6 @@ void tellerMenu() {
 		cout << "\nYou entered the incorrect access code. Please try again.\n" << endl;
 	}
 }
-
 void managerMenu() {
 	Manager manager;
 	int ch = 0, managerAccessCode;

@@ -28,7 +28,6 @@ void CustAccMgmt::createCustomer() {
         
         if(correctID == true) {
             cout << "Enter Customer Name: ";
-            cin.ignore();
             getline(cin, newCustomer.name);
             cout << "Enter Customer Address: ";
             getline(cin, newCustomer.address);
@@ -73,22 +72,24 @@ void CustAccMgmt::deposit(string ID) {
 	customer = accessor.returnCustomer(ID);
 	double depositfund = 0;
 
-	cout << "Enter amount";
+	cout << "Enter amount: ";
 	cin >> depositfund;
 
 	customer.funds += depositfund;
 
+	accessor.removeCustomer(ID);
 	accessor.writeCustomer(ID, customer.name, customer.address, customer.birthday, customer.SSN, customer.funds);
 }
 void CustAccMgmt::withdraw(string ID) {
 	customer = accessor.returnCustomer(ID);
 	double wfund = 0;
 
-	cout << "Enter amount";
+	cout << "Enter amount: ";
 	cin >> wfund;
 
 	customer.funds -= wfund;
 
+	accessor.removeCustomer(ID);
 	accessor.writeCustomer(ID, customer.name, customer.address, customer.birthday, customer.SSN, customer.funds);
 }
 

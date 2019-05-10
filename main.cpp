@@ -72,7 +72,7 @@ void tellerMenu() {
 	string ID;
 
 	if (accessCode == teller.accessCode) {
-		while (ch != 4) {
+		while (ch != 6) {
 			cout << "\n=============================================" << endl;
 			cout << "Welcome to the Teller menu. Please select an option below:" << endl;
 			cout << "1. Open Account" << endl;
@@ -101,6 +101,7 @@ void tellerMenu() {
 					cin.ignore();
 					getline(cin, ID);
 					teller.get_information(ID);
+					break;
 				case 4:
 					cout << "Please enter ID of user you want to deposit: ";
 					cin.ignore();

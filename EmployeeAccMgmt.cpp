@@ -22,7 +22,7 @@ void EmployeeAccMgmt::addEmployee()
 	cout << "Enter employee's manager's name: ";
 	cin.ignore();
 	getline(cin, newEmployee.managersName);
-	if (access.isEmployeeInfoDuplicated(to_string(newEmployee.SSN)) 
+	if (access.isEmployeeInfoDuplicated(to_string(newEmployee.SSN))
 		|| access.isEmployeeInfoDuplicated(to_string(newEmployee.employeeID)))
 	{
 		cout << "Info duplicated. Employee already exists." << endl;

@@ -1,15 +1,7 @@
-//
-//  main.cpp
-//  Banking System
-//
-//  Created by Andrew Nguyen on 4/8/19.
-//
-
 #include "Teller.hpp"
 #include "MANAGER.hpp"
 #include <iostream>
 #include<string>
-
 using namespace std;
 
 void tellerMenu();

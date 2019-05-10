@@ -1,13 +1,4 @@
-//
-//  DatabaseAccess.cpp
-//  banking_system
-//
-//  Created by Andrew Nguyen on 5/6/19.
-//  Copyright © 2019 CSUF-CPSC462. All rights reserved.
-//
-
 #include "DatabaseAccess.hpp"
-
 using namespace std;
 
 DatabaseAccess::DatabaseAccess() {
@@ -119,7 +110,7 @@ int DatabaseAccess::getQuota(string ID)
 				employeeFile >> line;
 			}
 			return stoi(line);
-		}	
+		}
 	}
 }
 
